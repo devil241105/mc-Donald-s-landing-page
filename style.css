@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0E0D0C;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #212121;
+    padding: 10px;
+}
+
+.brand-title {
+    color: white;
+    font-size: 1.5em;
+}
+
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    padding: 0 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar-links a:hover {
+    color: #E4C590; /* Change color on hover */
+}
+
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-button .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+#page1{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#loop_text{
+    display: flex;
+    position: absolute;
+    padding: 0;
+    top: 30%;
+    height: 25%;
+    width: 100%;
+    color: #FAF9F6;
+    font-size: 100px;
+    white-space: nowrap;
+    font-family: 'Roboto Condensed';
+}
+#loop_text>h1{
+    animation-name: anim;
+    animation-duration: 35s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#loop_text>h1>span{
+    -webkit-text-stroke: 1.2px #FAF9F6;
+    color: transparent;
+}
+@keyframes anim{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-163%);
+    }
+}
+
+#coverpage{
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    z-index: 50;
+    scale: 120%;
+}
+
+@media (max-width: 768px) {
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+}
+
+.navbar-links.active ul {
+    display: flex;
+}
+
+#preloader{
+    background: #0E0D0C url(./preloader.gif) no-repeat center center;
+    background-size: 20%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
